@@ -55,7 +55,7 @@ public class FoodTruckApp {
 				listTrucks();
 				break;
 			case 2:
-				System.out.println(averageRating());
+				averageRating();
 				break;
 			case 3:
 				highestRating();
@@ -69,8 +69,8 @@ public class FoodTruckApp {
 			}
 		}
 	}
-	
-	//returns number of trucks in array
+
+	// returns number of trucks in array
 	public int howManyTrucks() {
 		// how many trucks are in the array?
 		int truckNum = 0;
@@ -82,7 +82,7 @@ public class FoodTruckApp {
 		}
 		return truckNum;
 	}
-	
+
 	public void listTrucks() {
 		int truckNum = howManyTrucks();
 		// list trucks
@@ -91,19 +91,37 @@ public class FoodTruckApp {
 		}
 	}
 
-	public double averageRating() {
+	public void averageRating() {
 		int truckNum = howManyTrucks();
-		//get average rating
+		// get average rating
 		double ratingTotal = 0;
-		
+
 		for (int i = 0; i < truckNum; i++) {
 			ratingTotal += trucks[i].getRating();
 		}
-		return (ratingTotal / truckNum);
+		if(truckNum > 0)
+			System.out.println("The average truck rating is : " + (ratingTotal / truckNum));
+		else
+			System.out.println("There are no trucks in the system.");
 	}
 
 	public void highestRating() {
+		int truckNum = howManyTrucks();
+		int highestRating = 0;
 
+		FoodTruck highestRatedTruck = null;
+		for (int i = 0; i < truckNum; i++) {
+
+			if (trucks[i].getRating() > highestRating) {
+				highestRatedTruck = trucks[i];
+				highestRating = highestRatedTruck.getRating();
+			}
+		}
+		if (highestRatedTruck != null) {
+			System.out.println(highestRatedTruck.getName() + " is the highest rated truck. Serving delicious " + highestRatedTruck.getFoodType() + " on a street corner near you!");
+		} else {
+			System.out.println("There are no trucks in the system.");
+		}
 	}
 
 	public static void main(String[] args) {
