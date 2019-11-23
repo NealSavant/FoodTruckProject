@@ -5,14 +5,15 @@ public class FoodTruck {
 	private String name;
 	private String foodType;
 	private int rating;
-	private static int id;
+	private static int uniqueID;
+	private int id;
 
 	// C O N S T R U C T O R
-	public FoodTruck(String name, String foodType, int rating, int id) {
+	public FoodTruck(String name, String foodType, int rating) {
 		this.name = name;
 		this.foodType = foodType;
 		this.rating = rating;
-		FoodTruck.id = id;
+		id = ++uniqueID;
 	}
 
 	// M E T H O D S
@@ -26,7 +27,6 @@ public class FoodTruck {
 		this.name = name;
 	}
 
-	@SuppressWarnings("static-access")
 	public int getId() {
 		return this.id;
 	}

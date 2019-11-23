@@ -36,7 +36,7 @@ public class FoodTruckApp {
 				// this puts scanner onto a new line
 				kb.nextLine();
 				// put into array
-				FoodTruck truck = new FoodTruck(name, foodType, rating, i);
+				FoodTruck truck = new FoodTruck(name, foodType, rating);
 				trucks[i] = truck;
 				System.out.println("Thank you, the truck has been added.");
 				counter++;
@@ -64,6 +64,7 @@ public class FoodTruckApp {
 				highestRating();
 				break;
 			case 4:
+				System.out.println("Goodbye.");
 				inMenu = false;
 				break;
 			default:
