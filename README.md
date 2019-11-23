@@ -32,3 +32,5 @@ Static field variables can be used for unique ID allocation. At a later point I 
 Methods should not be larger than a screen. (generally)
 
 Never write code twice. Put it into a method.
+
+-Neal Savant
