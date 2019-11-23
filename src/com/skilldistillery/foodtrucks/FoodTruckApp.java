@@ -2,6 +2,11 @@ package com.skilldistillery.foodtrucks;
 
 import java.util.Scanner;
 
+/**
+ * @author Neal Savant
+ * 
+ *         November 22, 2019
+ */
 public class FoodTruckApp {
 	public Scanner kb = new Scanner(System.in);
 	public FoodTruck[] trucks = new FoodTruck[5];
@@ -93,7 +98,7 @@ public class FoodTruckApp {
 		for (int i = 0; i < truckNum; i++) {
 			System.out.println(trucks[i].toString());
 		}
-		if(truckNum == 0) {
+		if (truckNum == 0) {
 			System.out.println("There are no trucks in the system.");
 		}
 	}
@@ -127,8 +132,8 @@ public class FoodTruckApp {
 		}
 		if (highestRatedTruck != null) {
 			System.out.println(highestRatedTruck.getName() + " is the highest rated truck at "
-					+ highestRatedTruck.getRating() + " stars!\n Its staff is serving delicious " + highestRatedTruck.getFoodType()
-					+ " on a street corner near you!");
+					+ highestRatedTruck.getRating() + " stars!\n Its staff is serving delicious "
+					+ highestRatedTruck.getFoodType() + " on a street corner near you!");
 		} else {
 			System.out.println("There are no trucks in the system.");
 		}

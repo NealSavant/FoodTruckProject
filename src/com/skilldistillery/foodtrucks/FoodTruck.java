@@ -1,5 +1,10 @@
 package com.skilldistillery.foodtrucks;
 
+/**
+ * @author Neal Savant
+ * 
+ *         November 22, 2019
+ */
 public class FoodTruck {
 	// F I E L D S
 	private String name;
@@ -17,8 +22,7 @@ public class FoodTruck {
 	}
 
 	// M E T H O D S
-	
-	
+
 	public String getName() {
 		return name;
 	}
