@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class FoodTruckApp {
 	public Scanner kb = new Scanner(System.in);
+	public FoodTruck[] trucks = new FoodTruck[5];
 
 	public void run() {
 		System.out.println("\t-Welcome to Food Trucks-");
@@ -14,8 +15,6 @@ public class FoodTruckApp {
 	}
 
 	public void userInput() {
-		FoodTruck[] trucks = new FoodTruck[5];
-
 		boolean isInputting = true;
 		while (isInputting) {
 
@@ -35,7 +34,7 @@ public class FoodTruckApp {
 				// this puts scanner onto a new line
 				kb.nextLine();
 				// put into array
-				FoodTruck truck = new FoodTruck(name, foodType, rating);
+				FoodTruck truck = new FoodTruck(name, foodType, rating, i);
 				trucks[i] = truck;
 				System.out.println("Thank you, the truck has been added.");
 			}
@@ -49,7 +48,62 @@ public class FoodTruckApp {
 			System.out.println("2. See the average rating of food trucks.");
 			System.out.println("3. Display the highest-rated food truck.");
 			System.out.println("4. Quit");
+			int menuChoice = kb.nextInt();
+
+			switch (menuChoice) {
+			case 1:
+				listTrucks();
+				break;
+			case 2:
+				System.out.println(averageRating());
+				break;
+			case 3:
+				highestRating();
+				break;
+			case 4:
+				inMenu = false;
+				break;
+			default:
+				System.out.println("Command not recognized.");
+
+			}
 		}
+	}
+	
+	//returns number of trucks in array
+	public int howManyTrucks() {
+		// how many trucks are in the array?
+		int truckNum = 0;
+		for (int i = 0; i < 5; i++) {
+			if (trucks[i] != null) {
+				truckNum++;
+			} else
+				break;
+		}
+		return truckNum;
+	}
+	
+	public void listTrucks() {
+		int truckNum = howManyTrucks();
+		// list trucks
+		for (int i = 0; i < truckNum; i++) {
+			System.out.println(trucks[i].toString());
+		}
+	}
+
+	public double averageRating() {
+		int truckNum = howManyTrucks();
+		//get average rating
+		double ratingTotal = 0;
+		
+		for (int i = 0; i < truckNum; i++) {
+			ratingTotal += trucks[i].getRating();
+		}
+		return (ratingTotal / truckNum);
+	}
+
+	public void highestRating() {
+
 	}
 
 	public static void main(String[] args) {

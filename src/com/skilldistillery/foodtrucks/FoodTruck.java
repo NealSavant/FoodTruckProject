@@ -8,14 +8,16 @@ public class FoodTruck {
 	private static int id;
 
 	// C O N S T R U C T O R
-	public FoodTruck(String name, String foodType, int rating) {
+	public FoodTruck(String name, String foodType, int rating, int id) {
 		this.name = name;
 		this.foodType = foodType;
 		this.rating = rating;
-		this.id = ++id;
+		FoodTruck.id = id;
 	}
 
 	// M E T H O D S
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -26,10 +28,6 @@ public class FoodTruck {
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getFoodType() {
@@ -46,6 +44,20 @@ public class FoodTruck {
 
 	public void setRating(int rating) {
 		this.rating = rating;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Food Truck: ");
+		builder.append(name);
+		builder.append(", Food Type = ");
+		builder.append(foodType);
+		builder.append(", Rating = ");
+		builder.append(rating);
+		builder.append(", ID: ");
+		builder.append(this.getId());
+		return builder.toString();
 	}
 
 }
