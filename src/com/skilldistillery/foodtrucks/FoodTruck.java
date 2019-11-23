@@ -26,8 +26,9 @@ public class FoodTruck {
 		this.name = name;
 	}
 
+	@SuppressWarnings("static-access")
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 	public String getFoodType() {
