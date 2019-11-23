@@ -13,13 +13,13 @@ I was tasked with creating a java application that simulates a food truck rating
 
 After taking the information, a main menu is presented where there are four options:
 
-  :List trucks
+  1.  List trucks
 
-  :Get the average rating
+  2.  Get the average rating
 
-  :Get information on the highest rated truck
+  3.  Get information on the highest rated truck
 
-  :Quit program
+  4.  Quit program
 
 ### Topics/Technologies Used
 
