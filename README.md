@@ -5,11 +5,11 @@
 ### Overview
 I was tasked with creating a java application that simulates a food truck rating service in the command line. The user is prompted to input information for up to 5 food trucks:
 
-  :Name
+    :Name
 
-  :Type of food
+    :Type of food
 
-  :Rating
+    :Rating
 
 After taking the information, a main menu is presented where there are four options:
 
